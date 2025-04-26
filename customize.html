@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customize Your Drink</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #00754a;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .customize-section {
+      background: #eee;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin: 20px 0;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    select {
+      padding: 10px;
+      width: 220px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .btn-preview, .btn-order {
+      background-color: #ff5e3a;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn-order {
+      background-color: #28a745;
+      margin-left: 10px;
+    }
+
+    .btn-preview:hover {
+      background-color: #e64c27;
+    }
+
+    .btn-order:hover {
+      background-color: #218838;
+    }
+
+    .preview-box, .order-msg {
+      background-color: #e4e7e7;
+      margin: 30px auto;
+      padding: 20px;
+      max-width: 600px;
+      border-radius: 10px;
+      font-size: 18px;
+      color: #333;
+      display: none;
+    }
+
+    footer {
+      background-color: #222;
+      color: #bbb;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>☕ Customize Your Drink</h1>
+    <p>Pick your perfect combination below</p>
+  </header>
+
+  <section class="customize-section">
+    <div class="form-group">
+      <label for="coffee">Coffee Type:</label>
+      <select id="coffee">
+        <option value="Espresso|120">Espresso - ₹120</option>
+        <option value="Latte|150">Latte - ₹150</option>
+        <option value="Cappuccino|140">Cappuccino - ₹140</option>
+        <option value="Americano|100">Americano - ₹100</option>
+        <option value="Mocha|160">Mocha - ₹160</option>
+        <option value="Macchiato|130">Macchiato - ₹130</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="milk">Milk Type:</label>
+      <select id="milk">
+        <option value="Cow Milk|30">Cow Milk - ₹30</option>
+        <option value="Almond Milk|40">Almond Milk - ₹40</option>
+        <option value="Oat Milk|35">Oat Milk - ₹35</option>
+        <option value="Soy Milk|25">Soy Milk - ₹25</option>
+        <option value="No Milk|0">No Milk - ₹0</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="syrup">Syrup:</label>
+      <select id="syrup">
+        <option value="Vanilla|20">Vanilla - ₹20</option>
+        <option value="Hazelnut|25">Hazelnut - ₹25</option>
+        <option value="Caramel|30">Caramel - ₹30</option>
+        <option value="Mocha|25">Mocha - ₹25</option>
+        <option value="None|0">None - ₹0</option>
+      </select>
+    </div>
+
+    <button class="btn-preview" onclick="previewDrink()">Preview Drink</button>
+    <button class="btn-order" onclick="placeOrder()">Place Order</button>
+
+    <div id="preview" class="preview-box"></div>
+    <div id="orderMsg" class="order-msg"></div>
+  </section>
+
+
+  <script>
+    function parseSelection(value) {
+      const [name, price] = value.split('|');
+      return { name, price: parseInt(price) };
+    }
+
+    function previewDrink() {
+      const coffee = parseSelection(document.getElementById("coffee").value);
+      const milk = parseSelection(document.getElementById("milk").value);
+      const syrup = parseSelection(document.getElementById("syrup").value);
+
+      const total = coffee.price + milk.price + syrup.price;
+
+      const preview = document.getElementById("preview");
+      preview.style.display = "block";
+      preview.innerHTML = `
+        <strong>Your Customized Drink:</strong><br><br>
+        ☕ <strong>Coffee:</strong> ${coffee.name} (₹${coffee.price})<br>
+        🥛 <strong>Milk:</strong> ${milk.name} (₹${milk.price})<br>
+        🍯 <strong>Syrup:</strong> ${syrup.name} (₹${syrup.price})<br><br>
+        💰 <strong>Total Price:</strong> ₹${total}
+      `;
+    }
+
+    function placeOrder() {
+      const coffee = parseSelection(document.getElementById("coffee").value);
+      const milk = parseSelection(document.getElementById("milk").value);
+      const syrup = parseSelection(document.getElementById("syrup").value);
+      const total = coffee.price + milk.price + syrup.price;
+
+      const msg = document.getElementById("orderMsg");
+      msg.style.display = "block";
+      msg.innerHTML = `
+        ✅ <strong>Order placed successfully!</strong><br><br>
+        🧾 <strong>Order Summary:</strong><br>
+        - ${coffee.name}<br>
+        - ${milk.name}<br>
+        - ${syrup.name}<br><br>
+        💳 <strong>Amount Paid:</strong> ₹${total}<br><br>
+        🕐 <em>Your drink will be ready shortly!</em>
+      `;
+    }
+  </script>
+
+</body>
+</html>

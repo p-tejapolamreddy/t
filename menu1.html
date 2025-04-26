@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CCD Style Menu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+    }
+
+    header {
+      background-color: #a80000;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      font-size: 22px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .back-arrow {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .header-right input {
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: none;
+      font-size: 14px;
+      width: 200px;
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #ddd;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .tab {
+      padding: 15px 20px;
+      cursor: pointer;
+      color: #333;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .tab.active {
+      color: #a80000;
+    }
+
+    .tab.active::after {
+      content: "";
+      position: absolute;
+      height: 3px;
+      background-color: #a80000;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .menu-section {
+      display: none;
+      padding: 15px;
+    }
+
+    .menu-section.active {
+      display: block;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      padding: 15px 0;
+    }
+
+    .menu-info {
+      flex: 1;
+    }
+
+    .menu-info h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #111;
+    }
+
+    .menu-info p {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .menu-img {
+      width: 200px;
+      height: 200px;
+      margin-left: 15px;
+      border-radius: 8px;
+      object-fit: cover;
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <span class="back-arrow" onclick="window.history.back()">←</span><br>
+    <span>Search By Category</span>
+  </div>
+  <div class="header-right">
+    <input type="text" id="searchInput" placeholder="Search...">
+  </div>
+</header>
+
+<!-- Tabs -->
+<div class="tabs">
+  <div class="tab active" onclick="showSection('best')">Jucies</div>
+  <div class="tab" onclick="showSection('drinks')">Drinks</div>
+  <div class="tab" onclick="showSection('food')">Food</div>
+</div>
+
+<!-- HOT CLASSICS -->
+<div id="best" class="menu-section active">
+  <div class="menu-item" data-name="Dragon Drink">
+    <div class="menu-info">
+      <h3>Dragon Drink</h3>
+      <p>Bright mango and dragonfruit swirled with creamy coconut milk</p>
+<p><small>Chilled & Tropical</small></p>
+    </div>
+    <img src="C:\Users\teja.polamreddy\Downloads\dragon mango.jpg" alt="Dragon Drink" class="menu-img">
+  </div>
+
+  <div class="menu-item" data-name="Mocha Cookie Crumble">
+    <div class="menu-info">
+      <h3>Mocha Cookie Crumble</h3>
+<p>Rich mocha blended with cookie bits and velvety cream</p>
+<p><small>Cold Delight</small></p>
+    </div>
+    <img src="C:\Users\teja.polamreddy\Downloads\choclate.jpg" alt="Cappuccino Regular" class="menu-img">
+  </div>
+</div>
+
+<!-- CHILLERS -->
+<div id="drinks" class="menu-section">
+  <div class="menu-item" data-name="Dragon Drink">
+    <div class="menu-info">
+  <h3>🥤 Iced Caramel Macchiato</h3>
+<p>Bold espresso poured over chilled milk and vanilla syrup, topped with rich caramel drizzle.</p>
+<p><small>Sweet, creamy & perfectly balanced</small></p>
+    </div>
+    <img src="C:\Users\teja.polamreddy\Downloads\ice.jpg" alt="Dragon Drink" class="menu-img">
+  </div>
+
+  <div class="menu-item" data-name="Mocha Cookie Crumble">
+    <div class="menu-info">
+     <h3>🍓 Strawberry Açaí Refresher</h3>
+<p>Vibrant strawberry and açaí flavors shaken with ice, a hint of passionfruit, and green coffee extract.</p>
+<p><small>Cool, fruity & revitalizing</small></p>
+    </div>
+    <img src="C:\Users\teja.polamreddy\Downloads\strawberry.jpg" alt="Mocha Frappe" class="menu-img">
+  </div>
+</div>
+
+<!-- LATTE SPECIALS -->
+<div id="food" class="menu-section">
+  <div class="menu-item" data-name="Cafe Latte Regular">
+    <div class="menu-info">
+    <h3>🍝 Creamy Alfredo Pasta</h3>
+<p>Deliciously creamy pasta tossed in a rich, buttery Alfredo sauce with herbs and parmesan.</p>
+<p><small>Warm, cheesy & satisfying</small></p>
+    </div>
+    <img src="C:\Users\teja.polamreddy\Downloads\pasta.jpg" alt="Latte Regular" class="menu-img">
+  </div>
+
+  <div class="menu-item" data-name="Cafe Latte King">
+    <div class="menu-info">
+     <h3>🍔 Cheesy Double Burger</h3>
+<p>Juicy double beef patties stacked with melted cheese, crispy lettuce, and tangy sauce in a toasted bun.</p>
+<p><small>Large King Size</small></p>
+    </div>
+    <img src="C:\Users\teja.polamreddy\Downloads\burger.jpg" alt="Latte King" class="menu-img">
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  function showSection(id) {
+    const tabs = document.querySelectorAll('.tab');
+    const sections = document.querySelectorAll('.menu-section');
+
+    tabs.forEach(tab => tab.classList.remove('active'));
+    sections.forEach(sec => sec.classList.remove('active'));
+
+    document.querySelector(`.tab[onclick*="${id}"]`).classList.add('active');
+    document.getElementById(id).classList.add('active');
+  }
+
+  // Real-time Search Function
+  const searchInput = document.getElementById("searchInput");
+
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+    const allItems = document.querySelectorAll(".menu-item");
+
+    allItems.forEach(item => {
+      const name = item.getAttribute("data-name").toLowerCase();
+      if (name.includes(query)) {
+        item.style.display = "flex";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

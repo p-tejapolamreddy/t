@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bestsellers</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f7f7;
+    }
+
+    header {
+      background-color: #00754a;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 30px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .card {
+      min-width: 350px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      padding: 20px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      margin-top: 10px;
+      color: #00754a;
+    }
+
+    .card ul {
+      padding-left: 20px;
+    }
+
+    .card iframe {
+      width: 100%;
+      height: 200px;
+      margin-top: 10px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eee;
+      color: #333;
+    }
+
+    /* Hide scrollbar on Webkit browsers */
+    .scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+    .scroll-container {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;     /* Firefox */
+    }
+.price-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 10px;
+    }
+.order-btn {
+      background-color: #007BFF; /* Blue */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+      margin-left: 20px;
+
+    }
+
+    .order-btn:hover {
+      background-color: #0056b3; /* Darker blue */
+
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bestseller Drinks</h1>
+  </header>
+
+  <div class="scroll-container">
+
+    <!-- Card 1 -->
+    <div class="card">
+      <img src="C:\Users\teja.polamreddy\Downloads\dragon mango.jpg" alt="Dragon Drink">
+      <h3>Dragon Drink</h3>
+      <ul>
+        <li>Mango Dragonfruit base</li>
+        <li>Coconut Milk</li>
+        <li>Ice</li>
+      </ul>
+      <iframe src="juice1.mp4" allowfullscreen></iframe>
+<div class="price-button">
+  <div class="price">₹ 441.00</div>
+  <button class="order-btn">Place Order</button>
+</div>
+
+     
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <img src="C:\Users\teja.polamreddy\Downloads\choclate1.jpg" alt="Mocha Cookie Crumble">
+      <h3>Mocha Cookie Crumble</h3>
+      <ul>
+        <li>Frappuccino Roast</li>
+        <li>Mocha Sauce</li>
+        <li>Cookie Crumble</li>
+      </ul>
+      <iframe src="choclate.mp4" allowfullscreen></iframe>
+<div class="price-button">
+  <div class="price">₹ 462.00</div>
+  <button class="order-btn">Place Order</button>
+</div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <img src="C:\Users\teja.polamreddy\Downloads\hot.jpg" alt="Hot Chocolate">
+      <h3>Hot Chocolate</h3>
+      <ul>
+        <li>Steamed Milk</li>
+        <li>Mocha Sauce</li>
+        <li>Whipped Cream</li>
+      </ul>
+      <iframe src="hot choclate.mp4" allowfullscreen></iframe>
+<div class="price-button">
+  <div class="price">₹ 194.25</div>
+  <button class="order-btn">Place Order</button>
+</div>
+    </div>
+
+  </div>
+
+  
+
+</body>
+</html>

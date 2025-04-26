@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Drinks</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f7f7;
+    }
+
+    header {
+      background-color: #00754a;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 30px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .card {
+      min-width: 350px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      padding: 20px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      margin-top: 10px;
+      color: #00754a;
+    }
+
+    .card ul {
+      padding-left: 20px;
+    }
+
+    .card iframe {
+      width: 100%;
+      height: 200px;
+      margin-top: 10px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eee;
+      color: #333;
+    }
+
+    .scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scroll-container {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .price-button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .order-btn {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .order-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Our Signature Drinks</h1>
+  </header>
+
+  <div class="scroll-container">
+
+    <!-- Drink 1 -->
+    <div class="card">
+      <img src="C:\Users\teja.polamreddy\Downloads\ice.jpg" alt="Dragon Drink">
+      <h3>🥤 Iced Caramel Macchiato</h3>
+      <ul>
+        <li>Espresso</li>
+        <li>Vanilla Syrup</li>
+        <li>Milk</li>
+        <li>Caramel Drizzle</li>
+      </ul>
+      <iframe src="ice.mp4" allowfullscreen></iframe>
+      <div class="price-button">
+        <div class="price">₹ 375.00</div>
+        <button class="order-btn">Place Order</button>
+      </div>
+    </div>
+
+    <!-- Drink 2 -->
+    <div class="card">
+      <img src="C:\Users\teja.polamreddy\Downloads\strawberry.jpg" alt="Mocha Cookie Crumble">
+      <h3>🍓Strawberry Acai Refresher</h3>
+      <ul>
+        <li>Strawberry Acai Base</li>
+        <li>Green Coffee Extract</li>
+        <li>Ice</li>
+        <li>Freeze-dried Strawberries</li>
+      </ul>
+      <iframe src="stra.mp4" allowfullscreen></iframe>
+      <div class="price-button">
+        <div class="price">₹ 355.00</div>
+        <button class="order-btn">Place Order</button>
+      </div>
+    </div>
+
+    <!-- Drink 3 -->
+    <div class="card">
+      <img src="C:\Users\teja.polamreddy\Downloads\vv1.jpg" alt="Hot Chocolate">
+      <h3>🍪 Vanilla Cream Cold Brew</h3>
+      <ul>
+        <li>Cold Brew Coffee</li>
+        <li>Vanilla Syrup</li>
+        <li>Sweet Cream</li>
+        <li>Ice</li>
+      </ul>
+      <iframe src="vv.mp4" allowfullscreen></iframe>
+      <div class="price-button">
+        <div class="price">₹ 360.00</div>
+        <button class="order-btn">Place Order</button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

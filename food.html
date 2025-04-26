@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Food Menu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f7f7;
+    }
+
+    header {
+      background-color: #00754a;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 30px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .card {
+      min-width: 350px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      padding: 20px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      margin-top: 10px;
+      color: #00754a;
+    }
+
+    .card ul {
+      padding-left: 20px;
+    }
+
+    .card iframe {
+      width: 100%;
+      height: 200px;
+      margin-top: 10px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    .price-button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .order-btn {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .order-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scroll-container {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eee;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🍽️ Our Delicious Bites</h1>
+  </header>
+
+  <div class="scroll-container">
+
+    <!-- Food 1 -->
+    <div class="card">
+      <img src="C:\Users\teja.polamreddy\Downloads\pasta.jpg" alt="Creamy Alfredo Pasta">
+      <h3>🍝 Creamy Alfredo Pasta</h3>
+      <ul>
+        <li>Fettuccine Pasta</li>
+        <li>Alfredo Sauce</li>
+        <li>Grated Parmesan</li>
+        <li>Herbs</li>
+      </ul>
+      <iframe src="pasta.mp4" allowfullscreen></iframe>
+      <div class="price-button">
+        <div class="price">₹ 420.00</div>
+        <button class="order-btn">Place Order</button>
+      </div>
+    </div>
+
+    <!-- Food 2 -->
+    <div class="card">
+      <img src="C:\Users\teja.polamreddy\Downloads\burger.jpg" alt="Cheesy Double Burger">
+      <h3>🍔 Cheesy Double Burger</h3>
+      <ul>
+        <li>Beef Patty / Veg Patty</li>
+        <li>Cheddar Cheese</li>
+        <li>Lettuce & Tomato</li>
+        <li>Special Sauce</li>
+      </ul>
+      <iframe src="burger.mp4" allowfullscreen></iframe>
+      <div class="price-button">
+        <div class="price">₹ 299.00</div>
+        <button class="order-btn">Place Order</button>
+      </div>
+    </div>
+
+    <!-- Food 3 -->
+    <div class="card">
+      <img src="C:\Users\teja.polamreddy\Downloads\pizza.jpg" alt="Margherita Pizza">
+      <h3>🍕 Margherita Pizza</h3>
+      <ul>
+        <li>Tomato Sauce</li>
+        <li>Fresh Mozzarella</li>
+        <li>Basil Leaves</li>
+        <li>Olive Oil</li>
+      </ul>
+      <iframe src="pizza.mp4" allowfullscreen></iframe>
+      <div class="price-button">
+        <div class="price">₹ 385.00</div>
+        <button class="order-btn">Place Order</button>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 Our Cafe. All rights reserved.
+  </footer>
+
+</body>
+</html>
